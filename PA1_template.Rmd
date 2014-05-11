@@ -3,7 +3,13 @@
 
 ## Loading and preprocessing the data
 
+Read csv file as a data frame, remove incomplete cases:
 
+```{r, tidy=FALSE}
+data <- unz("activity.zip", "activity.csv")  # Unzip file
+data <- read.csv2(data, sep = ",")           # Read file as data frame
+data <- data[complete.cases(data), ]         # Remove incomplete cases
+```
 
 ## What is mean total number of steps taken per day?
 
